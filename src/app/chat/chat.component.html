@@ -1,0 +1,52 @@
+<div class=" myContainer">
+  <div class="leftSideBar">
+    <div id="username">
+      {{this.userData.name}}
+      <span class="glyphicon glyphicon-bell"></span>
+    </div>
+    <div class="myChannel">
+      <div class="mychannel">
+        <span (click)="showUserChannel()" id="channelHeading"> Channels:</span>
+        <span (click)="showUserChannel()" style="margin: 5px" [ngClass]="{'glyphicon glyphicon-triangle-top'  :(channelFag),'glyphicon glyphicon-triangle-bottom':(!channelFag)}"></span>
+        <span class="glyphicon glyphicon-plus-sign" (click)="addChannel()" id='addChannely'></span>
+      </div>
+      <ul *ngIf='channelFag'>
+        <li *ngFor='let channel of userChanneldata' (click)='changeChannel(channel)' [id]=channel>{{channel}}</li>
+      </ul>
+    </div>
+    <div class="logout">
+      <button type="button" (click)="logout()">
+        <span class="glyphicon glyphicon-off"></span> Log out
+      </button>
+    </div>
+    <div class="searchChannel">
+      <div class="searchChannel">
+  
+        <input type="text" class="form-control" align="right" placeholder="Search Channel" (keyup)="findchannel()" [(ngModel)]=item>
+      <ul>
+        <li *ngFor='let channel of searchData' class="list-group-item" (click)='addToChannel(channel)'>{{channel}}</li>
+      </ul>
+    </div>
+    </div>
+  </div>
+  <div class="mainArea">
+    <div class="notification">
+        <span id="phone" class="glyphicon glyphicon-phone" style="margin-left: 80%"></span>
+        <span id="cog" class="glyphicon glyphicon-cog" style="margin-left: 75%"></span>
+
+    </div>
+    
+    <div class="messageGroup">
+      <ul class="list-group">
+        <li *ngFor='let msg of message' [ngClass]="{'alert alert-warning':(msg.from != userData.email),'alert alert-success':(msg.from == userData.email)}"
+          [ngStyle]='{"float": msg.from == userData.email ? "right": "left"}'>{{msg.body}}
+          <br/> from:{{msg.from}}</li>
+      </ul>
+    </div>
+    <div class="sendMsg">
+      <input type="text" class="form-control" placeholder="Start chat...." (keyup.enter)="sendMsg()" [(ngModel)]=msg>
+      <button style="font-size:24px">send <i class="glyphicon glyphicon-send"></i></button>
+    </div>
+  </div>
+</div>
+

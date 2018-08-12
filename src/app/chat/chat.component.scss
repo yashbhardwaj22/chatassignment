@@ -1,0 +1,100 @@
+.myContainer{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    max-width: 100%;
+}
+.leftSideBar{
+    background-color: #4D394B;
+    color: #AB9BA9;
+    height: 100vh;
+    max-width: 100&;
+}
+#username{
+    text-align: center;
+    font-size: 18px;
+    margin-top:18px;
+}
+#username:hover{
+    color: #ffffff;
+}
+.sendMsg{
+    position:absolute;
+    bottom:4vh;    
+    margin-left: 18px;
+    margin-right: 18px;
+    width: 150vh;
+}
+.messageGroup{
+    overflow-y: scroll;
+    height: 70vh;
+    width: 150vh; 
+    position: absolute;
+    bottom: 12vh;
+    li{
+        overflow: hidden;
+        width: 50%;
+        margin: 5px;
+    }
+}
+.mainArea{
+    max-width: 100%;
+}
+.logout{
+    position: absolute;
+    top: 6vh;
+    left: 12vh;
+    button{
+        border: none;
+        background-color: #4D394B;
+    }
+    button:hover{        
+        border: none;
+        color: #4D394B;
+        background-color: #AB9BA9;
+    }
+}
+#addChannely{
+    border: none;
+    color: #AB9BA9;
+    font-size: 14px;
+   float: right;
+   margin-right:10px; 
+}
+#addChannely:hover{
+font-size: 15px;
+color: #ffffff;
+}
+.mychannel{
+    margin-top: 10vh;
+text-align: center;
+ul{
+    margin-top: 2vh;
+}
+li{
+    overflow: hidden;
+    font-size: 14px;
+}
+li:hover{
+    color: #ffffff;
+    font-size: 14px;
+    overflow: hidden;
+}
+}
+.searchChannel{
+    position: relative;
+    margin:18px;
+    height: 10vp;
+    z-index: 99 !important; 
+li{
+    overflow: hidden;
+}
+}
+#phone{
+    font-size: 200%;
+    margin-top: 4%
+}
+
+#cog{
+    margin-top: -2%;
+    font-size: 200%;
+}
