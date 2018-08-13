@@ -19,15 +19,15 @@
 }
 .sendMsg{
     position:absolute;
-    bottom:4vh;    
+    bottom:0%;    
     margin-left: 18px;
     margin-right: 18px;
-    width: 150vh;
+    width: 120vh;
 }
 .messageGroup{
     overflow-y: scroll;
     height: 70vh;
-    width: 150vh; 
+    width: 160vh; 
     position: absolute;
     bottom: 12vh;
     li{
@@ -37,7 +37,7 @@
     }
 }
 .mainArea{
-    max-width: 100%;
+    max-width: 150%;
 }
 .logout{
     position: absolute;
@@ -97,4 +97,11 @@ li{
 #cog{
     margin-top: -2%;
     font-size: 200%;
+}
+
+#send{
+    position:relative;
+    clear:both;
+    border:none;
+    float:right;
 }

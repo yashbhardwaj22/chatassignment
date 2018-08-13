@@ -32,6 +32,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   reg:any;
   channelData:any;
   searchData=[];
+  showuserChannel=[];
   ngOnDestroy() {
     clearInterval(this.setInt);
   }
@@ -72,6 +73,8 @@ export class ChatComponent implements OnInit, OnDestroy {
       err => {
         console.log(err)
       })
+
+      this.showUserChannel();
 
   }
   sendMsg() {
@@ -132,6 +135,7 @@ export class ChatComponent implements OnInit, OnDestroy {
           this.userChanneldata.push(channel.unique_name);
         }
       }
+      this.showuserChannel=this.userChanneldata;
     }
     this.channelFag=! this.channelFag;
     if(this.channelFag){

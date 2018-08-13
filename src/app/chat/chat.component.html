@@ -6,8 +6,8 @@
     </div>
     <div class="myChannel">
       <div class="mychannel">
-        <span (click)="showUserChannel()" id="channelHeading"> Channels:</span>
-        <span (click)="showUserChannel()" style="margin: 5px" [ngClass]="{'glyphicon glyphicon-triangle-top'  :(channelFag),'glyphicon glyphicon-triangle-bottom':(!channelFag)}"></span>
+        
+        <span (click)="showUserChannel()" style="margin: 5px" >{{channels}}</span>
         <span class="glyphicon glyphicon-plus-sign" (click)="addChannel()" id='addChannely'></span>
       </div>
       <ul *ngIf='channelFag'>
@@ -32,7 +32,7 @@
   <div class="mainArea">
     <div class="notification">
         <span id="phone" class="glyphicon glyphicon-phone" style="margin-left: 80%"></span>
-        <span id="cog" class="glyphicon glyphicon-cog" style="margin-left: 75%"></span>
+        <span id="cog" class="glyphicon glyphicon-cog" style="margin: 5% 0% 85% 0%" ></span>
 
     </div>
     
@@ -45,7 +45,7 @@
     </div>
     <div class="sendMsg">
       <input type="text" class="form-control" placeholder="Start chat...." (keyup.enter)="sendMsg()" [(ngModel)]=msg>
-      <button style="font-size:24px">send <i class="glyphicon glyphicon-send"></i></button>
+      <span id="send" style="font-size:24px"><i class="glyphicon glyphicon-send"></i></span>
     </div>
   </div>
 </div>
