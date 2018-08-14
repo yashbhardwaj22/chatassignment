@@ -18,7 +18,7 @@
     color: #ffffff;
 }
 .sendMsg{
-    position:absolute;
+    position: absolute;
     bottom:0%;    
     margin-left: 18px;
     margin-right: 18px;
@@ -30,10 +30,12 @@
     width: 160vh; 
     position: absolute;
     bottom: 12vh;
+    word-wrap: break-word;
     li{
         overflow: hidden;
         width: 50%;
         margin: 5px;
+        word-wrap: break-word;
     }
 }
 .mainArea{
@@ -41,7 +43,7 @@
 }
 .logout{
     position: absolute;
-    top: 6vh;
+    top: 7vh;
     left: 12vh;
     button{
         border: none;
@@ -100,8 +102,18 @@ li{
 }
 
 #send{
-    position:relative;
+    margin-right: -5%;
+    margin-top: -5%;
     clear:both;
     border:none;
     float:right;
+}
+#data{
+    overflow: hidden;
+    list-style: none;
+}
+
+li:hover{
+    background-color: rgb(229, 243, 243);
+    cursor: pointer;
 }

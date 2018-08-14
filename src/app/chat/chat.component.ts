@@ -33,6 +33,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   channelData:any;
   searchData=[];
   showuserChannel=[];
+  current:string="general";
   ngOnDestroy() {
     clearInterval(this.setInt);
   }
@@ -47,16 +48,13 @@ export class ChatComponent implements OnInit, OnDestroy {
         console.log(err)
       })
 
-    this.twilio.addToGeneralChannel(this.userData.email).subscribe(res => {
-      console.log(res);
-    },
-      err => {
-        console.log(err)
-      })
+    
     this.setInt = setInterval(() => {
       this.twilio.getAllMessage().subscribe(res => {
         console.log(res);
+      
         this.message = res.messages;
+        this.current = localStorage.getItem("channel");
 
       },
         err => {
@@ -69,12 +67,13 @@ export class ChatComponent implements OnInit, OnDestroy {
       console.log(res);
       sessionStorage.setItem("allchannel",JSON.stringify(res));
       this.channelData = res;
+      this.showUserChannel();
     },
       err => {
         console.log(err)
       })
 
-      this.showUserChannel();
+      
 
   }
   sendMsg() {
@@ -129,6 +128,7 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.userChanneldata.length=0;
     var AllChanenl=JSON.parse(sessionStorage.getItem("allchannel"));
     var userAllChannel = JSON.parse(sessionStorage.getItem("userAllChannel"));
+    
     for(let channel of AllChanenl.channels){
       for(let uChannel of userAllChannel.channels){
         if(channel.sid == uChannel.channel_sid){
